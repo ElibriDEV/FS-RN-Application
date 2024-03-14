@@ -51,7 +51,7 @@ $ docker-compose -f ./backend/docker-compose.yml up
 
 #### install dependencies:
 ```bash
-$ npm i --prefix ./backend/
+$ npm i --prefix ./backend/ package.json
 ```
 
 #### run database using Docker (or your local):
@@ -62,13 +62,13 @@ $ docker-compose -f ./backend/local.yml up
 #### dev run:
 create ./backend/.development.dev
 ```bash
-$ npm run start:dev
+$ npm --prefix ./backend run start:dev
 ```
 
 #### prod run:
 create ./backend/.production.dev
 ```bash
-$ npm run start
+$ npm --prefix ./backend run start
 ```
 
 ## React run
@@ -76,7 +76,7 @@ $ npm run start
 ### Using docker:
 set environment REACT_APP_BACKEND_URL in ./frontend/docker-compose.yml
 ```bash
-$ docker-compose -f ./frontend/local.yml up
+$ docker-compose -f ./frontend/docker-compose.yml up
 ```
 
 ### Without Docker:
@@ -85,10 +85,10 @@ $ docker-compose -f ./frontend/local.yml up
 
 #### install dependencies:
 ```bash
-$ npm i --prefix ./backend/
+$ npm i --prefix ./frontend/ package.json
 ```
 
 #### run:
 ```bash
-$ npm run start
+$ npm --prefix ./frontend run start
 ```
