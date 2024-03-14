@@ -1,5 +1,5 @@
 import {FunctionComponent} from "react";
-import {Typography} from "@material-tailwind/react";
+
 export interface PostProps {
     id: number
     title: string

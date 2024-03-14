@@ -6,16 +6,17 @@ import {
     Param,
     ParseIntPipe,
     Patch,
-    Post, Query,
+    Post,
+    Query,
     UsePipes,
     ValidationPipe,
 } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { DeleteUsersDTO } from '../users/dto/crud.user.dto';
 import { PostsService } from './posts.service';
-import {GetPost, Pagination, PostBase, UpdatePost} from "./dto/crud.posts.dto";
-import { PaginatedModelClass } from "../../common/utils/model.manager";
-import { PostModel } from "./posts.model";
+import { GetPost, Pagination, PostBase, UpdatePost } from './dto/crud.posts.dto';
+import { PaginatedModelClass } from '../../common/utils/model.manager';
+import { PostModel } from './posts.model';
 
 @ApiTags('Посты')
 @Controller('post')
@@ -26,7 +27,7 @@ export class PostsController {
     @ApiOkResponse({ type: PaginatedModelClass<PostModel> })
     @Get('/all')
     async getUserTasks(
-        @Query(new ValidationPipe({transform: true})) requestData: Pagination
+        @Query(new ValidationPipe({ transform: true })) requestData: Pagination,
     ): Promise<PaginatedModelClass<PostModel>> {
         return await this.postsService.getPosts(requestData);
     }

@@ -4,7 +4,7 @@ import {GetPostsRequestParams, GetPostsResponse} from "./interfaces";
 export class PostsService {
     private manager: IAxiosManager
 
-    // dependency injection for "maybe" tests
+    // DI for "maybe" tests
     constructor(manager: IAxiosManager = new AxiosManager()) {
         this.manager = manager
     }

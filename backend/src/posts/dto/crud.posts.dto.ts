@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsPositive, MaxLength, MinLength } from 'class-validator';
-import {Transform, Type} from "class-transformer";
+import { IsNotEmpty, IsNumber, IsOptional, IsPositive, MaxLength, MinLength } from 'class-validator';
+import { Transform } from 'class-transformer';
 
 export class GetPostByUserId {
     @ApiProperty({ example: 1, description: 'Уникальный идентификатор пользователя' })
@@ -11,12 +11,12 @@ export class GetPostByUserId {
 }
 
 export class PostBase extends GetPostByUserId {
-    @ApiProperty({ example: 'Новая задача', description: 'Заголовок задачи' })
+    @ApiProperty({ example: 'Новый пост', description: 'Заголовок поста' })
     @MinLength(1)
     @MaxLength(64)
     title: string;
 
-    @ApiPropertyOptional({ example: 'Посидеть-побалдеть', description: 'Содержание задачи' })
+    @ApiPropertyOptional({ example: 'Сижу-балдею', description: 'Содержание пост' })
     @IsOptional()
     text?: string = '';
 
@@ -35,30 +35,30 @@ export class UpdatePost {
     @IsPositive()
     userId?: number;
 
-    @ApiPropertyOptional({ example: 'Новая задача', description: 'Заголовок задачи' })
+    @ApiPropertyOptional({ example: 'Новый пост', description: 'Заголовок поста' })
     @IsOptional()
     @MinLength(1)
     @MaxLength(64)
     title?: string;
 
-    @ApiPropertyOptional({ example: 'Посидеть-побалдеть', description: 'Содержание задачи' })
+    @ApiPropertyOptional({ example: 'Сижу-балдею', description: 'Содержание поста' })
     @IsOptional()
     text?: string = '';
 }
 
 export class GetPost extends PostBase {
-    @ApiProperty({ example: 1, description: 'Уникальный идентификатор задачи' })
+    @ApiProperty({ example: 1, description: 'Уникальный идентификатор поста' })
     id: number;
 }
 
 export class Pagination {
     @ApiProperty({ example: 1, description: 'Текущая страница' })
     @IsNumber()
-    @Transform(({value}) => parseInt(value, 10), { toClassOnly: true })
-    page: number
+    @Transform(({ value }) => parseInt(value, 10), { toClassOnly: true })
+    page: number;
 
     @ApiProperty({ example: 10, description: 'Количество элементов на странице' })
     @IsNumber()
-    @Transform(({value}) => parseInt(value, 10), { toClassOnly: true })
-    perPage: number
+    @Transform(({ value }) => parseInt(value, 10), { toClassOnly: true })
+    perPage: number;
 }

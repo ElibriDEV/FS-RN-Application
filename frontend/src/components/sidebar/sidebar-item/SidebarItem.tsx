@@ -30,7 +30,7 @@ export const SidebarItem: FunctionComponent<SidebarItemProps> = (props: SidebarI
             my-2 
             rounded-none 
             hover:border-l-4 
-            ${props.selected == thisIndex && "border-l-4"}
+            ${props.selected === thisIndex && "border-l-4"}
             `,
             onClick: (): void => {
                 props.onSelected(thisIndex)
@@ -44,7 +44,7 @@ export const SidebarItem: FunctionComponent<SidebarItemProps> = (props: SidebarI
             <ListItemPrefix placeholder={undefined}>
                 {props.icon}
             </ListItemPrefix>
-            <p className={`text-white ${props.selected == props.index ? "font-bold" : "font-normal"}`}>{props.text}</p>
+            <p className={`text-white ${props.selected === props.index ? "font-bold" : "font-normal"}`}>{props.text}</p>
             {props.suffix}
         </ListItem>
     )
