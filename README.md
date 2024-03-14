@@ -54,6 +54,11 @@ $ docker-compose -f ./backend/docker-compose.yml up
 $ npm i --prefix ./backend/
 ```
 
+#### run database using Docker (or your local):
+```bash
+$ docker-compose -f ./backend/local.yml up
+```
+
 #### dev run:
 create ./backend/.development.dev
 ```bash
@@ -71,7 +76,7 @@ $ npm run start
 ### Using docker:
 set environment REACT_APP_BACKEND_URL in ./frontend/docker-compose.yml
 ```bash
-$ docker-compose -f ./frontend/docker-compose.yml up
+$ docker-compose -f ./frontend/local.yml up
 ```
 
 ### Without Docker:
