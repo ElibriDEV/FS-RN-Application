@@ -14,7 +14,7 @@ FRONTEND_URL=http://localhost:3000/
 REACT_APP_BACKEND_URL=backend
 ```
 
-## .env without Docker
+## .env without global Docker run
 
 ### ./backend/.development.dev or ./backend/.production.env
 ```
