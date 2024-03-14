@@ -43,6 +43,7 @@ $ docker-compose up
 ## Backend run
 
 ### Using docker:
+create ./backend/.development.dev
 ```bash
 $ docker-compose -f ./backend/docker-compose.yml up
 ```
