@@ -2,7 +2,3 @@
 /frontend/build
 /backend/node_modules
 /backend/dist
-
-.env
-./frontend/.env
-./backend/.env
