@@ -44,7 +44,7 @@ export const SidebarItem: FunctionComponent<SidebarItemProps> = (props: SidebarI
             <ListItemPrefix placeholder={undefined}>
                 {props.icon}
             </ListItemPrefix>
-            <p className={`text-white ${props.selected === props.index ? "font-bold" : "font-normal"}`}>{props.text}</p>
+            <p className={`${props.selected !== props.index ? 'text-indigo-100' : 'text-white'} ${props.selected === props.index ? "font-bold" : "font-normal"}`}>{props.text}</p>
             {props.suffix}
         </ListItem>
     )

@@ -24,9 +24,9 @@ export const Sidebar = () => {
         setSelected(index)
     }
 
-    const getIconProps = (): IconsProps => {
+    const getIconProps = (index: number): IconsProps => {
         return {
-            color: "white",
+            color: selected !== index ? '#e0e7ff' : '#ffffff',
             width: "30px",
             height: "30px",
         }
@@ -39,29 +39,29 @@ export const Sidebar = () => {
                     Sidebar
                 </Typography>
             </div>
-            <List className="p-0 flex flex-col justify-between h-full" placeholder={undefined}>
+            <List className="p-0 flex flex-col justify-between h-full font-['Light']" placeholder={undefined}>
                 <div className="flex flex-col">
                     <SidebarItem index={1} selected={selected} redirect="/" onSelected={onSelected} text="Dashboard"
-                                 icon={<Squares2X2Icon {...getIconProps()} />}/>
+                                 icon={<Squares2X2Icon {...getIconProps(1)} />}/>
                     <SidebarItem index={2} selected={selected} redirect="/all-courses" onSelected={onSelected} text="All Courses"
-                                 icon={<FolderMinusIcon {...getIconProps()} />}/>
+                                 icon={<FolderMinusIcon {...getIconProps(2)} />}/>
                     <SidebarItem index={3} selected={selected} redirect="/messages" onSelected={onSelected} text="Messages"
-                                 icon={<ChatBubbleOvalLeftEllipsisIcon {...getIconProps()} />}
+                                 icon={<ChatBubbleOvalLeftEllipsisIcon {...getIconProps(3)} />}
                                  suffix={
                                      <ListItemSuffix placeholder={undefined}>
                                          <div className="bg-white text-black p-1.5 rounded-full">14</div>
                                      </ListItemSuffix>
                                  }/>
                     <SidebarItem index={4} selected={selected} redirect="/friends" onSelected={onSelected} text="Friends"
-                                 icon={<UserGroupIcon {...getIconProps()} />}/>
+                                 icon={<UserGroupIcon {...getIconProps(4)} />}/>
                     <SidebarItem index={5} selected={selected} redirect="/schedule" onSelected={onSelected} text="Schedule"
-                                 icon={<ClipboardDocumentCheckIcon {...getIconProps()} />}/>
+                                 icon={<ClipboardDocumentCheckIcon {...getIconProps(5)} />}/>
                 </div>
                 <div className="flex flex-col">
                     <SidebarItem index={6} selected={selected} redirect="/settings" onSelected={onSelected} text="Settings"
-                                 icon={<Cog6ToothIcon {...getIconProps()} />}/>
+                                 icon={<Cog6ToothIcon {...getIconProps(6)} />}/>
                     <SidebarItem index={7} selected={selected} redirect="/directory" onSelected={onSelected} text="Directory"
-                                 icon={<InformationCircleIcon {...getIconProps()} />}/>
+                                 icon={<InformationCircleIcon {...getIconProps(7)} />}/>
                 </div>
             </List>
         </Card>
