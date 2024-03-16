@@ -2,10 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Light";
-  src: local("MuseoSans"),
-  url("./static/fonts/MuseoSansCyrl-300.ttf") format("truetype");
+@layer base {
+  @font-face {
+    font-family: 'MuseoSans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("./static/fonts/MuseoSansCyrl-300.ttf") format('truetype');
+  }
+  @font-face {
+    font-family: 'MuseoSans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("./static/fonts/MuseoSansCyrl-500.ttf") format('truetype');
+  }
+  @font-face {
+    font-family: 'MuseoSans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("./static/fonts/MuseoSansCyrl-700.ttf") format('truetype');
+  }
+  html {
+    @apply font-museoSans;
+  }
 }
 
 
@@ -18,10 +39,5 @@ body {
 
 html, body, #app, #root #app>div {
   height: 100%;
-  font-family: "Light", serif;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: "MuseoSans", sans-serif;
 }

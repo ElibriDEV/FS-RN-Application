@@ -39,7 +39,7 @@ export const Sidebar = () => {
                     Sidebar
                 </Typography>
             </div>
-            <List className="p-0 flex flex-col justify-between h-full font-['Light']" placeholder={undefined}>
+            <List className="p-0 flex flex-col justify-between h-full" placeholder={undefined}>
                 <div className="flex flex-col">
                     <SidebarItem index={1} selected={selected} redirect="/" onSelected={onSelected} text="Dashboard"
                                  icon={<Squares2X2Icon {...getIconProps(1)} />}/>

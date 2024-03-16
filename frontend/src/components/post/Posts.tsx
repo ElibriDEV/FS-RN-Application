@@ -35,13 +35,13 @@ export const Posts: FunctionComponent = () => {
     }
 
     return (
-        <>
-            <div className="flex flex-col justify-between h-full">
-                <div>
-                    {posts?.map((post: PostProps) => <PostItem key={post.id} {...post} />)}
-                </div>
-                <Pagination page={page} totalPages={totalPages} onNext={onNext} onPrev={onPrev} onPageClick={onPageClick} />
+
+        <div className="flex flex-col h-full">
+            <div>
+                {posts?.map((post: PostProps) => <PostItem key={post.id} {...post} />)}
             </div>
-        </>
+            <Pagination page={page} totalPages={totalPages} onNext={onNext} onPrev={onPrev} onPageClick={onPageClick} />
+        </div>
+
     )
 }

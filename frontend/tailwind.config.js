@@ -8,7 +8,11 @@ module.exports = withMT({
     colors: {
       primary: "#5955b3"
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        museoSans: ["MuseoSans"]
+      }
+    },
   },
   plugins: [],
 });

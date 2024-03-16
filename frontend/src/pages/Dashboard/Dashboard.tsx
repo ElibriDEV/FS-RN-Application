@@ -1,15 +1,18 @@
-import { Header } from '../../components/header/Header';
-import { Footer } from '../../components/footer/Footer';
 import { Posts } from '../../components/post/Posts';
+import { InnerLayout } from '../../components/layout/inner-layout/InnerLayout';
+import { RSidebar } from '../../components/r-sidebar/RSidebar';
 
 export const Dashboard = () => {
   return (
-    <>
-      <Header />
-      <div className="h-full">
-        <Posts />
+    <div className="flex flex-row h-full">
+      <div className="w-full">
+        <InnerLayout header="My Courses">
+          <Posts />
+        </InnerLayout>
+
       </div>
-      <Footer />
-    </>
+      <RSidebar />
+
+    </div>
   );
 }

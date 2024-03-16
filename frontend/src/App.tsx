@@ -4,6 +4,8 @@ import {Layout} from "./components/layout/Layout";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import { Dashboard } from './pages/Dashboard/Dashboard';
 import './static/fonts/MuseoSansCyrl-300.ttf'
+import './static/fonts/MuseoSansCyrl-500.ttf'
+import './static/fonts/MuseoSansCyrl-700.ttf'
 
 export const App: FunctionComponent = () => {
     console.log(process.env.REACT_APP_BACKEND_URL)
