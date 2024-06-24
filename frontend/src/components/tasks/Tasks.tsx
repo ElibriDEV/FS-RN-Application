@@ -56,7 +56,7 @@ export const Tasks: FunctionComponent = () => {
         <div className="flex flex-col h-full">
             {
                 !notFound ? (
-                    <>
+                    <div className="pb-5">
                         <div className="flex flex-col gap-5">
                             {tasks?.map((post: TaskProps) => <TaskItem key={post.id} {...post} />)}
                         </div>
@@ -64,7 +64,7 @@ export const Tasks: FunctionComponent = () => {
                             <Pagination page={page} totalPages={totalPages} onNext={onNext} onPrev={onPrev} onPageClick={onPageClick} />
                         </div>
 
-                    </>
+                    </div>
                 ) : (
                     <div>Задач нет</div>
                 )

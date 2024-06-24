@@ -52,9 +52,9 @@ export const Pagination = ({ page, totalPages, onPrev, onNext, onPageClick }: Pa
             <div className="flex items-center gap-2">
                 {pagesRow.map(
                     (page: number) => <IconButton
-                        className="bg-primary"
+                        className={active === page ? "bg-primary" : ""}
                         variant={active === page ? "filled" : "text"}
-                        color="gray"
+                        color="black"
                         onClick={
                         () => {
                             setActive(page)
