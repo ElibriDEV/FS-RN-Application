@@ -41,3 +41,18 @@ html, body, #app, #root #app>div {
   height: 100%;
   font-family: "MuseoSans", sans-serif;
 }
+
+.post {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.post:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+textarea {
+  resize: none;
+  overflow: hidden;
+  min-height: 50px;
+  max-height: 100px;
+}

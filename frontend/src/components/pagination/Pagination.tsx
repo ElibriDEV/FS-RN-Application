@@ -5,9 +5,9 @@ import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 export interface PaginationProps {
     page: number
     totalPages: number
-    onPrev: () => {}
-    onNext: () => {}
-    onPageClick: (page: number) => {}
+    onPrev: () => void
+    onNext: () => void
+    onPageClick: (page: number) => void
 }
 
 export const Pagination = ({ page, totalPages, onPrev, onNext, onPageClick }: PaginationProps) => {
@@ -42,7 +42,7 @@ export const Pagination = ({ page, totalPages, onPrev, onNext, onPageClick }: Pa
         <div className="flex gap-4 justify-center">
             <Button
                 variant="text"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 text-primary"
                 onClick={prev}
                 disabled={active === 1}
                 placeholder={""}
@@ -52,6 +52,7 @@ export const Pagination = ({ page, totalPages, onPrev, onNext, onPageClick }: Pa
             <div className="flex items-center gap-2">
                 {pagesRow.map(
                     (page: number) => <IconButton
+                        className="bg-primary"
                         variant={active === page ? "filled" : "text"}
                         color="gray"
                         onClick={
@@ -65,7 +66,7 @@ export const Pagination = ({ page, totalPages, onPrev, onNext, onPageClick }: Pa
             </div>
             <Button
                 variant="text"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 text-primary"
                 onClick={next}
                 disabled={active === totalPages}
                 placeholder={""}
